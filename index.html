@@ -1,18 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
+        integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"   />
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"   />
     <!-- Style css -->
     <link rel="stylesheet" href="style.css">
     <title>Biglietto Treno Form</title>
 </head>
+
 <body>
-    <h1>Calcolo del prezzo del biglietto del treno</h1>
+    <h1 class="text-center">Calcolo il prezzo del tuo biglietto</h1>
+    <div class="mycontainer container">
+        <div class="row">
+            <div class="col-6 mt-4">
+                <input type="text" class="form-control" placeholder="Inserisci il tuo nome" id="nome"  aria-label="First name">
+            </div>
+            <div class="col-6 mt-4">
+                <input type="text" class="form-control" placeholder="Inserisci il tuo cognome" id="cognome"  aria-label="Last name">
+            </div>
+            <div class="col-6 mt-4 mb-4">
+                <input type="number" class="form-control" placeholder="Km che vuoi percorrere" id="km" aria-label="km">
+            </div>
+            <div class="col-6 mt-4 mb-4">
+                <select class="form-select" aria-label="età" id="età">
+                    <option selected>Seleziona la tua età</option>
+                    <option value="Minorenne">Minorenne</option>
+                    <option value="Adulto">Adulto</option>
+                    <option value="Over65">Over 65</option>
+                </select>
+            </div>
+            <div class="d-flex justify-content-around">
+                <button type="button" class="btn btn-outline-success px-4" value="submit">Invia</button>
+                <button type="button" class="btn btn-outline-dark px-4" value="reset">Annulla</button>
+            </div>
+        </div>
+    </div>
     <script src="./script.js"></script>
 </body>
+
 </html>
