@@ -20,6 +20,7 @@ const km = document.getElementById("km");
 const età = document.getElementById("età");
 const ticket = document.getElementById("ticket");
 const prezzoScontato = document.getElementById("prezzoScontato");
+const prezzoTot = document.getElementById("prezzoTotale");
 
 console.log(kmField);
 // All'invio del form, aggiorniamo i valori del biglietto
@@ -35,13 +36,19 @@ myform.addEventListener("submit", function (event) {
     console.log(prezzoTotale);
     if (età.innerHTML < "18") {
         const priceMin = prezzoTotale - (prezzoTotale * 0.2);
-        prezzoScontato.innerHTML = "Sei minorenne quindi il prezzo è " + priceMin.toFixed(2) + "€";
+        prezzoScontato.innerHTML = "Sei minorenne quindi il prezzo è scontato del 20%: " + priceMin.toFixed(2) + "€";
+        prezzoTot.className = "cancella";
+        prezzoTot.innerHTML = "Costo totale: " + prezzoTotale;
     } else if (età.innerHTML >= "18" && età.innerHTML < "65") {
-        prezzoScontato.innerHTML = "Non c'è nessuno sconto, il prezzo base è " + prezzoTotale;
+        prezzoScontato.innerHTML = "Il prezzo è " + prezzoTotale;
+        prezzoTot.className = "d-none";
 
     } else if (età.innerHTML >= "65") {
         const priceSen = prezzoTotale - (prezzoTotale * 0.4);
-        prezzoScontato.innerHTML = "Sei OVER65 quindi il prezzo è " + priceSen.toFixed(2) + "€";
+        prezzoScontato.innerHTML = "Sei OVER65 quindi il prezzo è scontato del 40%: " + priceSen.toFixed(2) + "€";
+        prezzoTot.className = "cancella";
+        prezzoTot.innerHTML = "Costo totale: " + prezzoTotale;
+        
     }
 });
 
